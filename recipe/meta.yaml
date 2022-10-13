@@ -1,5 +1,5 @@
 {% set name = "clize" %}
-{% set version = "4.2.1" %}
+{% set version = "5.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3177a028e4169d8865c79af82bdd441b24311d4bd9c0ae8803641882d340a51d
+  sha256: fdc16912f00dfcca2f777f31684e7763e0fd11883f485c877aab65554a350f42
 
 build:
   noarch: python
