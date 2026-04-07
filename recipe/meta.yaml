@@ -12,12 +12,16 @@ source:
 build:
   noarch: python
   number: 1
-  script: {{ PYTHON }} -m pip install . -vv
+  script:
+    - set "SETUPTOOLS_SCM_PRETEND_VERSION=%PKG_VERSION%"  # [win]
+    - export SETUPTOOLS_SCM_PRETEND_VERSION=$PKG_VERSION  # [unix]
+    - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python {{ python_min }}
+    - python >=3.6
+    - setuptools_scm
   run:
     - attrs >=19.1.0
     - docutils >=0.17.0
